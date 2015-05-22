@@ -33,7 +33,10 @@ Presenter classes must implement **SlimPresenterInterface** with **present()** m
 	        	
 	        //use the presenter to add a new value
 	        $app = \Slim\Slim::getInstance();
-	        $view->set('authuser_instanceName', (($app->auth_user) ? $app->auth_user->name : ''));
+	        $view->set(
+	        	'authuser_instanceName',
+	        	(($app->auth_user) ? $app->auth_user->name : '')
+	        );
 	    
 	    }//present()
 	
@@ -48,3 +51,21 @@ Register the presenter class on one or more templates (first parameter can be st
 			'partials/specialh1.php
 		],
 	'H1Presenter');
+
+## Using The SlimTwigPresenterExtension
+
+The **present_include()** function mimics Twigs native **include()**:
+
+	<div class="row">
+		<div class="col-xs-12">
+            {{ present_include('partials/h1.php') }}
+        </div>
+    </div>
+
+    //pass local variables with Twig object syntax
+
+    <div class="row">
+		<div class="col-xs-12">
+            {{ present_include('partials/h1.php',{local_var:'something'}) }}
+        </div>
+    </div>
