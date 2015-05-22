@@ -1,0 +1,19 @@
+{
+	"name": "glasteel/slimPresenter",
+	"description": "Basic presenter implementation for Slim Views",
+    "authors": [
+        {
+            "name": "Paul Glass-Steel",
+            "email": "paul_gs@unc.edu"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "SlimPresenterTrait",
+            "SlimPresenterInterface",
+            "SlimTwigPresenter.php",
+            "SlimTwigPresenterExtension.php"
+        ]
+    }
+}
+
