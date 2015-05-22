@@ -18,9 +18,9 @@ class SlimTwigPresenterExtension extends \Twig_Extension
         );
     }//getFunctions()
 
-    public function presentInclude(Twig_Environment $env, $context, $template, $variables = array()){
+    public function presentInclude(\Twig_Environment $env, $context, $template, $variables = array()){
         $app = \Slim\Slim::getInstance();
         return $app->view->fetch($template,$variables);
     }//presentInclude()
-    
+
 }//class SlimTwigPresenterExtension
