@@ -14,14 +14,14 @@ trait SlimPresenterTrait
 	        return false;
 	    }
 	    foreach ( (array)$templates as $template) {
-	    	$this->presenters[$template] = $presenter_class;
+	    	$this->presenter_classmap[$template] = $presenter_class;
 	    }
 	    return true;
 	}//setPresenter()
 
 	public function getPresenter($template){
-		if ( array_key_exists($template, $this->presenters) ){
-	        $presenter_class = $this->presenters[$template];
+		if ( array_key_exists($template, $this->presenter_classmap) ){
+	        $presenter_class = $this->presenter_classmap[$template];
 	        return new $presenter_class;
 	    }
 	    return false;
