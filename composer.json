@@ -9,8 +9,8 @@
     ],
     "autoload": {
         "files": [
-            "SlimPresenterTrait",
-            "SlimPresenterInterface",
+            "SlimPresenterTrait.php",
+            "SlimPresenterInterface.php",
             "SlimTwigPresenter.php",
             "SlimTwigPresenterExtension.php"
         ]
