@@ -10,7 +10,8 @@ trait SlimPresenterTrait
 	        return false;
 	    }
 	    $presenter_class_interfaces = class_implements($presenter_class);
-	    if ( !in_array('SlimPresenterInterface', $presenter_class_interfaces) ){
+
+	    if ( !array_key_exists('glasteel\SlimPresenter\SlimPresenterInterface', $presenter_class_interfaces) ){
 	        return false;
 	    }
 	    foreach ( (array)$templates as $template) {
