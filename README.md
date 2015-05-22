@@ -5,7 +5,8 @@ Allows for a presenter method to be invoked on every use of a given template.
 ## Configuring Slim Framework
 
 Sample usage when using [Twig and Slim-Views](https://github.com/slimphp/Slim-Views):
-
+	
+	//index.php or wherever you instantiate Slim $app
 	$app->config(
     	'view',
     	new \glasteel\SlimPresenter\SlimTwigPresenter()
@@ -34,7 +35,7 @@ Presenter classes must implement **SlimPresenterInterface** with **present()** m
 	        //use the presenter to add a new value
 	        $app = \Slim\Slim::getInstance();
 	        $view->set(
-	        	'authuser_instanceName',
+	        	'authuser_name',
 	        	(($app->auth_user) ? $app->auth_user->name : '')
 	        );
 	    
@@ -48,7 +49,7 @@ Register the presenter class on one or more templates (first parameter can be st
 	$app->view->setPresenter(
 		[
 			'partials/h1.php',
-			'partials/specialh1.php
+			'partials/special_h1.php
 		],
 	'H1Presenter');
 
